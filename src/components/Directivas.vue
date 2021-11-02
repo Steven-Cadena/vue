@@ -1,6 +1,22 @@
 <template>
     <div>
         <h1>Directivas Vue</h1>
+        <ul v-if="peliculas.length > 0">
+            <li v-for="pelicula in peliculas" :key="pelicula">
+                {{pelicula}}
+            </li>
+        </ul>
+        <label>Introduzca un número:</label>
+        <input type="text" v-model="numero"><hr/>
+        <h3 v-if="numero>0" style="color:green">
+            Positivo
+        </h3>
+        <h3 v-else-if="numero ==0" style="color:blue">
+            Cero
+        </h3>
+        <h3 v-else style="color:red">
+            Negativo
+        </h3>
         <label>Nombre:</label>
         <input type="text" v-model="nombre"/><br/>
         <label> Edad:</label>
@@ -20,7 +36,9 @@ export default {
     data() {
         return{
             nombre: "",
-            edad: 0
+            edad: 0,
+            numero: 0,
+            peliculas:["Up","Toy-Story","Coco","Wall-E"]
         }
     }
 }
