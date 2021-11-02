@@ -1,0 +1,13 @@
+
+<template>
+    <div>
+        <h1>Television</h1>
+        <img src='./../../assets/images/tv.jpg'/>  
+    </div>
+</template>
+
+<script>
+export default {
+    name: "Television",
+}
+</script>
